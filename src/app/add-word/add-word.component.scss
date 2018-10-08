@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    padding: 1em;
+}
+
+form {
+    width: 100%;
+}
+
+.add-word-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

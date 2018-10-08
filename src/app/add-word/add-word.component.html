@@ -1,13 +1,17 @@
-<form class="example-form">
-  <mat-form-field>
-    <input matInput placeholder="Word Spelling">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Word Pronounciaton (This will be displayed as a clue)">
-  </mat-form-field>
-
-  <mat-form-field>
-    <textarea matInput placeholder="Meaning (optional)"></textarea>
-  </mat-form-field>
+<form class="" [formGroup]="addWordForm">
+  <div class="add-word-form">
+    <mat-form-field>
+      <input matInput formControlName="word" placeholder="Word Spelling">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput formControlName="pronounciaton" placeholder="Word Pronounciaton (Clue word)">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput formControlName="definition" placeholder="Meaning (optional)"></textarea>
+    </mat-form-field>
+  </div>
+  
+  <button mat-raised-button color="primary" [disabled]="!addWordForm.valid" (click)="addWord()">Add Word</button>
 </form>
