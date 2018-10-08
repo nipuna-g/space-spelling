@@ -1,27 +1,26 @@
 # SpaceSpelling
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+# What is Space Spelling?
 
-## Development server
+Wish you could improve you spelling skills?
+But can't seem to recall that word you've studied a hundred times? 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Try using the "Space Spelling" app to memorize the most difficult words. 
 
-## Code scaffolding
+Using the spaced repetition technique, you will be prompted to practice the words at intervals that guarantee memory retention.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+When you get a word right, it appears less and less frequently. And if you get it wrong, you’ll get more chances to practice and memorize it. 
 
-## Build
+This application is completely free and open source. Try it out today!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Technology
 
-## Running unit tests
+This project was generated using the Angular CLI.
+You can use the same tool to run and debug the application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Contribution
 
-## Running end-to-end tests
+Have an issue? Want a feature? 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Feel free to send a new issue via the Github issues. 
+Or send it a Merge Request.
