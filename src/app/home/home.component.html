@@ -1,5 +1,8 @@
-<div class="container">
-  <section class="jumbotron">
+<div class="container" #container [class.container--fixed]="stickyHeader">
+  <start-canvas>
+  </start-canvas>
+
+  <section class="action-bar"  [class.action-bar--fixed]="stickyHeader">
       <button mat-raised-button color="accent" *ngIf="hasSavedData" routerLink="/practice">Practice</button>
       <button mat-raised-button color="primary" *ngIf="hasSavedData" routerLink="/add-word">Add word</button>
       <button mat-raised-button color="primary" *ngIf="!hasSavedData" routerLink="/add-word">Get Started</button>

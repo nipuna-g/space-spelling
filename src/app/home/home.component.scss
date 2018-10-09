@@ -1,9 +1,28 @@
-.jumbotron {
-    height: 20rem;
-    background: darkblue;
-    padding: 1rem;
+.container {
+    &--fixed {
+        padding-top: 64px;
+    }
+}
 
-    background: linear-gradient(to bottom, #10104c 0%, #7e7ea5 100%);
+.action-bar {
+    padding: 1rem;
+    background: #252b50;
+
+    &--fixed {
+        position: fixed;
+        width: 100%;
+        top: 64px;
+    }
+}
+
+@media (max-width: 599px) {
+
+
+    .action-bar {
+        &--fixed {
+            top: 56px;
+        }
+    }
 }
 
 .section {
