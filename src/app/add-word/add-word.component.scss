@@ -1,14 +1,24 @@
-:host {
+.add-word {
     display: flex;
     padding: 1em;
-}
-
-form {
     width: 100%;
-}
 
-.add-word-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    &__form {
+        width: 100%;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__word-suggestion {
+            font-size: .8em;
+        
+            em {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
 }

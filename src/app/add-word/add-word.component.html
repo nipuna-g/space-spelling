@@ -1,17 +1,25 @@
-<form class="" [formGroup]="addWordForm">
-  <div class="add-word-form">
-    <mat-form-field>
-      <input matInput formControlName="word" placeholder="Word Spelling">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <input matInput formControlName="pronounciaton" placeholder="Word Pronounciaton (Clue word)">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <textarea matInput formControlName="definition" placeholder="Meaning (optional)"></textarea>
-    </mat-form-field>
-  </div>
-  
-  <button mat-raised-button color="primary" [disabled]="!addWordForm.valid" (click)="addWord()">Add Word</button>
-</form>
+<mat-progress-bar mode="indeterminate" *ngIf="definitionLoading"></mat-progress-bar>
+<div class="add-word">
+  <form class="add-word__form" [formGroup]="addWordForm">
+    <div class="add-word__form__container">
+      <mat-form-field>
+        <input matInput formControlName="word" placeholder="Word Spelling">
+      </mat-form-field>
+
+      <span *ngIf="wordSuggestion" class="add-word__form__word-suggestion">
+        Did you mean?
+        <em (click)="useSuggestion()">{{wordSuggestion.word}}</em>
+      </span>
+
+      <mat-form-field>
+        <input matInput formControlName="pronounciaton" placeholder="Word Pronounciaton (Clue word)">
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput formControlName="definition" placeholder="Meaning (optional)"></textarea>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" [disabled]="!addWordForm.valid" (click)="saveWord()">Add Word</button>
+  </form>
+</div>
