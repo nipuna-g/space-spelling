@@ -40,7 +40,8 @@ export class AddWordComponent implements OnInit {
         this.definitionService.getWordDetails(
             word,
             (definition: WordDefinition) => {
-                if (this.addWordForm.get('word').value === definition.word) {
+                let typedWord: string = this.addWordForm.get('word').value;
+                if (typedWord.toLowerCase() === definition.word) {
                     this.populateWordDefinition(definition);
                 } else {
                     this.wordSuggestion = definition;
