@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SpellingStoreService } from './spelling-store.service';
 import { StartCanvasComponent } from './start-canvas/start-canvas.component';
+import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { StartCanvasComponent } from './start-canvas/start-canvas.component';
         AddWordComponent,
         MainNavComponent,
         HomeComponent,
-        StartCanvasComponent
+        StartCanvasComponent,
+        PracticeComponent
     ],
     imports: [
         BrowserModule,

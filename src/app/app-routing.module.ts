@@ -1,3 +1,4 @@
+import { PracticeComponent } from './practice/practice.component';
 import { HomeComponent } from './home/home.component';
 import { AddWordComponent } from './add-word/add-word.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'add-word',
     component: AddWordComponent,
+  },
+  {
+    path: 'practice',
+    component: PracticeComponent,
   },
   { path: '**', component: HomeComponent }
 ];
