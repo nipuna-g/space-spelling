@@ -14,18 +14,16 @@ export class SpellingStoreService {
     });
   }
 
-  public saveWord(wordDefinition) {
-    wordDefinition.definition;
-    wordDefinition.pronounciaton;
-    wordDefinition.word;
-
-    this.db.words.add(wordDefinition)
-
-    let arr = this.db.words.each((def) => {
-      console.log(def)
+  public saveWord(wordDefinition: SavedWordDefinition, successCallback: () => void, errorCallback: (err) => void) {
+    this.db.words.add(wordDefinition).then(() => {
+        successCallback();
+    }).catch((err) => {
+        errorCallback(err);
     });
 
-    window.localStorage.setItem
+    const arr = this.db.words.each((def) => {
+      console.log(def);
+    });
   }
 }
 
@@ -34,7 +32,7 @@ class WordDatabase extends Dexie {
   attempts: Dexie.Table<Attempt, string>;
 
   constructor() {
-    super("WordDatabase");
+    super('WordDatabase');
     this.version(1).stores({
       words: 'word, definition, pronounciaton',
       attempts: '[date+word], isCorrect',

@@ -2,6 +2,7 @@
     display: flex;
     padding: 1em;
     width: 100%;
+    box-sizing: border-box;
 
     &__form {
         width: 100%;
@@ -14,10 +15,25 @@
 
         &__word-suggestion {
             font-size: .8em;
-        
+
             em {
                 cursor: pointer;
                 text-decoration: underline;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            button {
+                margin-right: .5em;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:first-child {
+                    margin-right: auto;
+                }
             }
         }
     }

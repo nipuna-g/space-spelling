@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
 import { WordDefinition, WordDefinitionService } from '../word-definition-service.service';
 import { SpellingStoreService } from './../spelling-store.service';
@@ -7,7 +9,7 @@ import { SpellingStoreService } from './../spelling-store.service';
 @Component({
     selector: 'app-add-word',
     templateUrl: './add-word.component.html',
-    styleUrls: ['./add-word.component.scss']
+    styleUrls: ['./add-word.component.scss'],
 })
 export class AddWordComponent implements OnInit {
     public definitionLoading = false;
@@ -15,13 +17,15 @@ export class AddWordComponent implements OnInit {
 
     public addWordForm = new FormGroup({
         word: new FormControl('', Validators.required),
-        pronounciaton: new FormControl('', Validators.required),
-        definition: new FormControl('')
+        pronunciation: new FormControl('', Validators.required),
+        definition: new FormControl(''),
     });
 
     constructor(
         private definitionService: WordDefinitionService,
-        private spellingStoreService: SpellingStoreService
+        private spellingStoreService: SpellingStoreService,
+        private snackBarService: MatSnackBar,
+        private router: Router,
     ) {}
 
     ngOnInit() {
@@ -29,7 +33,10 @@ export class AddWordComponent implements OnInit {
             .get('word')
             .valueChanges.pipe(debounceTime(200))
             .subscribe(value => {
-                if (!value || value.length < 2) return;
+                if (!value || value.length < 2) {
+                    return;
+                }
+
                 this.updateWordDetails(value);
             });
     }
@@ -40,7 +47,8 @@ export class AddWordComponent implements OnInit {
         this.definitionService.getWordDetails(
             word,
             (definition: WordDefinition) => {
-                let typedWord: string = this.addWordForm.get('word').value;
+                const typedWord: string = this.addWordForm.get('word').value;
+
                 if (typedWord.toLowerCase() === definition.word) {
                     this.populateWordDefinition(definition);
                 } else {
@@ -52,15 +60,13 @@ export class AddWordComponent implements OnInit {
             error => {
                 console.log(error);
                 this.definitionLoading = false;
-            }
+            },
         );
     }
 
     private populateWordDefinition(definition: WordDefinition) {
-        this.addWordForm.get('pronounciaton').setValue(definition.phonetic[0]);
-        this.addWordForm
-            .get('definition')
-            .setValue(definition.meaning.noun[0].definition);
+        this.addWordForm.get('pronunciation').setValue(definition.phonetic[0]);
+        this.addWordForm.get('definition').setValue(definition.meaning.noun[0].definition);
     }
 
     public useSuggestion() {
@@ -69,6 +75,21 @@ export class AddWordComponent implements OnInit {
     }
 
     public saveWord() {
-        this.spellingStoreService.saveWord(this.addWordForm.value);
+        this.spellingStoreService.saveWord(this.addWordForm.value, () => {
+            this.snackBarService.open('Word saved!');
+        }, (err) => {
+            this.snackBarService.open('Failed saving word!');
+        });
+
+        this.resetForm();
+    }
+
+    public saveWordAndExit() {
+        this.saveWord();
+        this.router.navigate(['/']);
+    }
+
+    public resetForm() {
+        this.addWordForm.reset();
     }
 }
