@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { SavedWordDefinition, SpellingStoreService } from './../spelling-store.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-practice',
@@ -22,7 +23,8 @@ export class PracticeComponent implements OnInit {
 
     constructor(
         private spellingStoreService: SpellingStoreService,
-        private snackBarService: MatSnackBar
+        private snackBarService: MatSnackBar,
+        private router: Router,
     ) {}
 
     ngOnInit() {
@@ -55,10 +57,15 @@ export class PracticeComponent implements OnInit {
             word.toLowerCase() === this.currentQuestion.word.toLowerCase()
         ) {
             this.snackBarService.open('✅ Correct!');
-            // TODO: navigate to next word
         } else {
             this.snackBarService.open(`❌ Sorry, that's not right`);
-            // TODO: navigate to next word
+        }
+
+        if (this.practiceWords.length > (this.currentQuestionIndex + 1)) {
+            this.currentQuestionIndex++;
+            this.practiceForm.reset();
+        } else {
+            this.router.navigate(['/']);
         }
     }
 }

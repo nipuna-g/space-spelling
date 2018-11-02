@@ -24,5 +24,9 @@
       color="primary" 
       [disabled]="!practiceForm.valid" 
       (click)="checkSpelling()">Check Spelling</button>
+
+    <span class="practice__form__number" *ngIf="practiceWords.length > 1">
+      ({{currentQuestionIndex + 1}} / {{practiceWords.length}})
+    </span>
   </form>
 </div>
