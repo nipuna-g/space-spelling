@@ -3,7 +3,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatProgressBarModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatProgressBarModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddWordComponent } from './add-word/add-word.component';
@@ -42,7 +42,10 @@ import { StartCanvasComponent } from './start-canvas/start-canvas.component';
         MatProgressBarModule,
         MatSnackBarModule,
     ],
-    providers: [SpellingStoreService],
+    providers: [
+        { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 1000} },
+        SpellingStoreService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
