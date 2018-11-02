@@ -2,16 +2,27 @@
   <form class="practice__form" [formGroup]="practiceForm">
     <div class="practice__form__container">
       <h3>
-        Word Spelling
+        {{currentQuestion?.pronunciation}}
         <img (click)="speakWord()" src="../../assets/speaker_icon.svg" class="speaker-icon"/>
       </h3>
-      <p>Meaning Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio molestias vero amet.</p>
+      <p>{{currentQuestion?.definition}}</p>
 
       <mat-form-field>
-        <input matInput formControlName="word" placeholder="Word Spelling">
+        <input 
+          matInput 
+          formControlName="word" 
+          placeholder="Word Spelling" 
+          autocomplete="off" 
+          autocorrect="off" 
+          autocapitalize="off" 
+          spellcheck="false">
       </mat-form-field>
     </div>
 
-    <button mat-raised-button color="primary" [disabled]="!practiceForm.valid" (click)="checkSpelling()">Check Spelling</button>
+    <button 
+      mat-raised-button 
+      color="primary" 
+      [disabled]="!practiceForm.valid" 
+      (click)="checkSpelling()">Check Spelling</button>
   </form>
 </div>

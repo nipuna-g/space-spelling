@@ -25,6 +25,16 @@ export class SpellingStoreService {
       console.log(def);
     });
   }
+
+  public getPracticeWords(successCallback: (words: SavedWordDefinition[]) => void) {
+    // TODO: only get the words that should be practiced for the current day
+
+    this.db.words.toArray().then((res) => {
+      successCallback(res);
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
 }
 
 class WordDatabase extends Dexie {
@@ -34,19 +44,19 @@ class WordDatabase extends Dexie {
   constructor() {
     super('WordDatabase');
     this.version(1).stores({
-      words: 'word, definition, pronounciaton',
+      words: 'word, definition, pronunciation',
       attempts: '[date+word], isCorrect',
     });
   }
 }
 
-class SavedWordDefinition {
+export class SavedWordDefinition {
   word: string;
   definition: string;
-  pronounciaton: string;
+  pronunciation: string;
 }
 
-class Attempt {
+export class Attempt {
   date: Date;
   word: string;
   isCorrect: boolean;
