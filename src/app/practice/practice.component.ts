@@ -21,11 +21,7 @@ export class PracticeComponent implements OnInit {
         return this.practiceWords[this.currentQuestionIndex];
     }
 
-    constructor(
-        private spellingStoreService: SpellingStoreService,
-        private snackBarService: MatSnackBar,
-        private router: Router,
-    ) {}
+    constructor(private spellingStoreService: SpellingStoreService, private router: Router) {}
 
     ngOnInit() {
         window.speechSynthesis.getVoices();
@@ -50,18 +46,11 @@ export class PracticeComponent implements OnInit {
     }
 
     checkSpelling() {
-        const word = this.practiceForm.get('word').value;
+        const attemptedSpelling = this.practiceForm.get('word').value;
 
-        if (
-            word === this.currentQuestion.word ||
-            word.toLowerCase() === this.currentQuestion.word.toLowerCase()
-        ) {
-            this.snackBarService.open('✅ Correct!');
-        } else {
-            this.snackBarService.open(`❌ Sorry, that's not right`);
-        }
+        this.spellingStoreService.checkSpelling(this.currentQuestion, attemptedSpelling);
 
-        if (this.practiceWords.length > (this.currentQuestionIndex + 1)) {
+        if (this.practiceWords.length > this.currentQuestionIndex + 1) {
             this.currentQuestionIndex++;
             this.practiceForm.reset();
         } else {
