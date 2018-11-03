@@ -1,3 +1,4 @@
+import { PracticeSummaryComponent } from './practice-summary/practice-summary.component';
 import { PracticeComponent } from './practice/practice.component';
 import { HomeComponent } from './home/home.component';
 import { AddWordComponent } from './add-word/add-word.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'practice',
     component: PracticeComponent,
+  },
+  {
+    path: 'practice-summary',
+    component: PracticeSummaryComponent,
   },
   { path: '**', component: HomeComponent }
 ];

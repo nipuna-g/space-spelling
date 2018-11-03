@@ -65,7 +65,7 @@ export class PracticeComponent implements OnInit {
             this.currentQuestionIndex++;
             this.practiceForm.reset();
         } else {
-            this.router.navigate(['/']);
+            this.router.navigate(['practice-summary']);
         }
     }
 }
