@@ -12,19 +12,25 @@
       </span>
 
       <mat-form-field>
-        <input matInput formControlName="pronunciation" placeholder="Word Pronunciation (Clue word)">
+        <input matInput formControlName="pronunciation" placeholder="Word
+          Pronunciation (Clue word)">
       </mat-form-field>
 
       <mat-form-field>
-        <textarea matInput formControlName="definition" placeholder="Meaning (optional)"></textarea>
+        <textarea matInput formControlName="definition" placeholder="Meaning
+          (optional)"></textarea>
       </mat-form-field>
     </div>
 
     <div class="add-word__form__buttons">
-        <button mat-raised-button color="warn" (click)="resetForm()">Reset</button>
-
-        <button mat-raised-button color="accent" [disabled]="!addWordForm.valid" (click)="saveWord()">Save & Add More</button>
-        <button mat-raised-button color="primary" [disabled]="!addWordForm.valid" (click)="saveWordAndExit()">Save</button>
+      <button type="button" mat-raised-button color="warn"
+        (click)="resetForm()">Reset</button>
+      <button type="button" mat-raised-button color="accent"
+        [disabled]="!addWordForm.valid"
+        (click)="saveWord()">Save & Add More</button>
+      <button type="button" mat-raised-button color="primary"
+        [disabled]="!addWordForm.valid"
+        (click)="saveWordAndExit()">Save</button>
     </div>
   </form>
 </div>

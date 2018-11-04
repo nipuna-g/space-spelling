@@ -66,7 +66,12 @@ export class AddWordComponent implements OnInit {
 
     private populateWordDefinition(definition: WordDefinition) {
         this.addWordForm.get('pronunciation').setValue(definition.phonetic[0]);
-        this.addWordForm.get('definition').setValue(definition.meaning.noun[0].definition);
+
+        let meaningKey = Object.keys(definition.meaning)[0];
+        let meaning = definition.meaning[meaningKey];
+        if (meaning && meaning.length) {
+            this.addWordForm.get('definition').setValue(meaning[0].definition);
+        }
     }
 
     public useSuggestion() {

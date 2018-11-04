@@ -3,29 +3,23 @@
     <div class="practice__form__container">
       <h3>
         {{currentQuestion?.pronunciation}}
-        <img (click)="speakWord()" src="../../assets/speaker_icon.svg" class="speaker-icon"/>
+        <img (click)="speakWord()" src="../../assets/speaker_icon.svg"
+          class="speaker-icon" />
       </h3>
       <p>{{currentQuestion?.definition}}</p>
 
       <mat-form-field>
-        <input 
-          matInput 
-          formControlName="word" 
-          placeholder="Word Spelling" 
-          autocomplete="off" 
-          autocorrect="off" 
-          autocapitalize="off" 
-          spellcheck="false">
+        <input matInput formControlName="word" placeholder="Word Spelling"
+          autocomplete="off" autocorrect="off"
+          autocapitalize="off" spellcheck="false">
       </mat-form-field>
     </div>
 
-    <button 
-      mat-raised-button 
-      color="primary" 
-      [disabled]="!practiceForm.valid" 
-      (click)="checkSpelling()">Check Spelling</button>
+    <button mat-raised-button type="button" color="primary"
+      [disabled]="!practiceForm.valid" (click)="checkSpelling()">Check
+      Spelling</button>
 
-    <span class="practice__form__number" *ngIf="practiceWords.length > 1">
+    <span class="practice__form__number" *ngIf="practiceWords.length> 1">
       ({{currentQuestionIndex + 1}} / {{practiceWords.length}})
     </span>
   </form>

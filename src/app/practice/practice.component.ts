@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
 import { SavedWordDefinition, SpellingStoreService } from './../spelling-store.service';
 import { Router } from '@angular/router';
 
