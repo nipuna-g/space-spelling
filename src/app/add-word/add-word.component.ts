@@ -9,7 +9,7 @@ import { SpellingStoreService } from './../spelling-store.service';
 @Component({
     selector: 'app-add-word',
     templateUrl: './add-word.component.html',
-    styleUrls: ['./add-word.component.scss'],
+    styleUrls: ['./add-word.component.scss']
 })
 export class AddWordComponent implements OnInit {
     public definitionLoading = false;
@@ -18,14 +18,14 @@ export class AddWordComponent implements OnInit {
     public addWordForm = new FormGroup({
         word: new FormControl('', Validators.required),
         pronunciation: new FormControl('', Validators.required),
-        definition: new FormControl(''),
+        definition: new FormControl('')
     });
 
     constructor(
         private definitionService: WordDefinitionService,
         private spellingStoreService: SpellingStoreService,
         private snackBarService: MatSnackBar,
-        private router: Router,
+        private router: Router
     ) {}
 
     ngOnInit() {
@@ -60,7 +60,7 @@ export class AddWordComponent implements OnInit {
             error => {
                 console.log(error);
                 this.definitionLoading = false;
-            },
+            }
         );
     }
 
@@ -75,11 +75,15 @@ export class AddWordComponent implements OnInit {
     }
 
     public saveWord() {
-        this.spellingStoreService.saveWord(this.addWordForm.value, () => {
-            this.snackBarService.open('Word saved!');
-        }, (err) => {
-            this.snackBarService.open('Failed saving word!');
-        });
+        this.spellingStoreService.saveWord(
+            this.addWordForm.value,
+            () => {
+                this.snackBarService.open('Word saved!');
+            },
+            err => {
+                this.snackBarService.open('Failed saving word!');
+            }
+        );
 
         this.resetForm();
     }
