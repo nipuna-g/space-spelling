@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AddWordComponent } from './add-word/add-word.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'practice-summary',
     component: PracticeSummaryComponent,
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
   },
   { path: '**', component: HomeComponent }
 ];

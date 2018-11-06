@@ -15,6 +15,7 @@ import { PracticeComponent } from './practice/practice.component';
 import { SpellingStoreService } from './spelling-store.service';
 import { StartCanvasComponent } from './start-canvas/start-canvas.component';
 import { PracticeSummaryComponent } from './practice-summary/practice-summary.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { PracticeSummaryComponent } from './practice-summary/practice-summary.co
         HomeComponent,
         StartCanvasComponent,
         PracticeComponent,
-        PracticeSummaryComponent
+        PracticeSummaryComponent,
+        SettingsComponent
     ],
     imports: [
         BrowserModule,
