@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import Svg, {Path} from 'react-native-svg';
+import {ChevronRight} from '@assets/images/icons';
 
 const MenuItem = () => (
   <TouchableOpacity style={styles.menuItem}>
@@ -9,17 +9,7 @@ const MenuItem = () => (
         <Text style={styles.menuTitle}>Practice spellings</Text>
         <Text style={styles.menuSubTitle}>6 words to practice for the day</Text>
       </View>
-      <Svg
-        style={styles.menuArrow}
-        width="12"
-        height="20"
-        viewBox="0 0 12 20"
-        fill="none">
-        <Path
-          d="M-2.06209e-06 18.03L1.77 19.8L11.67 9.89999L1.77 -1.05786e-05L-3.48358e-06 1.76999L8.13 9.89999L-2.06209e-06 18.03Z"
-          fill="#232F6B"
-        />
-      </Svg>
+      <ChevronRight style={styles.menuArrow} />
     </>
   </TouchableOpacity>
 );
