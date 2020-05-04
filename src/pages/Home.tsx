@@ -7,7 +7,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import SpaceCadet from '@assets/images/space-cadet.svg';
+import SpaceCadet from '@assets/images/space-cadet-bordered.svg';
 import MenuItem from '@components/MenuItem';
 
 const Home = () => (
