@@ -5,6 +5,7 @@ import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
+  DrawerNavigationProp,
 } from '@react-navigation/drawer';
 import 'react-native-gesture-handler';
 import Home from '@pages/Home';
@@ -12,8 +13,10 @@ import About from '@pages/About';
 import {HamburgerMenu} from '@assets/images/icons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import SpaceCadet from '@assets/images/space-cadet.svg';
+import BackButton from '@assets/images/back-button.svg';
 import {View, Text, StyleSheet} from 'react-native';
 import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
+import AddWord from '@pages/AddWord';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -61,6 +64,7 @@ const App = () => {
 const HomeNavigation = ({navigation}: {navigation: any}) => (
   <CommonStackNavigator navigation={navigation}>
     <Stack.Screen name="Spaced Spelling" component={Home} />
+    <Stack.Screen name="Add Word" component={AddWord} />
   </CommonStackNavigator>
 );
 
@@ -75,14 +79,21 @@ const CommonStackNavigator = ({
   navigation,
 }: {
   children: Element;
-  navigation: any;
+  navigation: DrawerNavigationProp<any>;
 }) => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <HamburgerMenu />
+        headerLeft: ({canGoBack}) => (
+          <TouchableOpacity
+            onPress={() => {
+              if (canGoBack) {
+                navigation.goBack();
+              } else {
+                navigation.openDrawer();
+              }
+            }}>
+            {!canGoBack ? <HamburgerMenu /> : <BackButton />}
           </TouchableOpacity>
         ),
         headerLeftContainerStyle: {

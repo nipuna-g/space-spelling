@@ -9,8 +9,9 @@ import {
 } from 'react-native';
 import SpaceCadet from '@assets/images/space-cadet-bordered.svg';
 import MenuItem from '@components/MenuItem';
+import {StackNavigationProp} from '@react-navigation/stack';
 
-const Home = () => (
+const Home = ({navigation}: {navigation: StackNavigationProp<any>}) => (
   <>
     <StatusBar barStyle="dark-content" />
 
@@ -31,8 +32,17 @@ const Home = () => (
             </View>
           </View>
         </View>
-        <MenuItem />
-        <MenuItem />
+        <MenuItem
+          title="Practice spellings"
+          subTitle="6 words to practice for the day"
+        />
+        <MenuItem
+          onPress={() => {
+            navigation.navigate('Add Word');
+          }}
+          title="Add Word"
+          subTitle="Add new word to be practiced"
+        />
         <View />
       </ScrollView>
     </SafeAreaView>

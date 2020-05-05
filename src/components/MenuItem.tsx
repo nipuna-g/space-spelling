@@ -2,12 +2,20 @@ import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {ChevronRight} from '@assets/images/icons';
 
-const MenuItem = () => (
-  <TouchableOpacity style={styles.menuItem}>
+const MenuItem = ({
+  title,
+  subTitle,
+  onPress,
+}: {
+  title: string;
+  subTitle: string;
+  onPress: () => void;
+}) => (
+  <TouchableOpacity style={styles.menuItem} onPress={onPress}>
     <>
       <View style={styles.menuTextContainer}>
-        <Text style={styles.menuTitle}>Practice spellings</Text>
-        <Text style={styles.menuSubTitle}>6 words to practice for the day</Text>
+        <Text style={styles.menuTitle}>{title}</Text>
+        <Text style={styles.menuSubTitle}>{subTitle}</Text>
       </View>
       <ChevronRight style={styles.menuArrow} />
     </>
