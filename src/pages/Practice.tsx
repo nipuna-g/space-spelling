@@ -1,10 +1,11 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Button} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import Input from '@components/Input';
 import Pronounce from '@assets/images/pronounce.svg';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Tts from 'react-native-tts';
 import PrimaryButton from '@components/PrimaryButton';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 const words = [
   {
@@ -19,35 +20,42 @@ const words = [
   },
 ];
 
-const Practice = () => (
-  <>
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View>
-          <TouchableOpacity
-            style={styles.definitionContainer}
-            onPress={() => {
-              Tts.speak(words[0].word);
-            }}>
-            <Text style={styles.pronounceText}>{words[0].pronunciation}</Text>
-            <Pronounce />
-          </TouchableOpacity>
-          <Text style={styles.defineText}>{words[0].description}</Text>
-        </View>
-        <Input
-          autoFocus
-          label="Enter correctly spelled word:"
-          onChange={() => {}}
-        />
+const Practice = ({navigation}: {navigation: StackNavigationProp<any>}) => (
+  <SafeAreaView style={styles.mainContainer}>
+    <View style={styles.container}>
+      <View>
+        <TouchableOpacity
+          style={styles.definitionContainer}
+          onPress={() => {
+            Tts.speak(words[0].word);
+          }}>
+          <Text style={styles.pronounceText}>{words[0].pronunciation}</Text>
+          <Pronounce />
+        </TouchableOpacity>
+        <Text style={styles.defineText}>{words[0].description}</Text>
       </View>
-      <View style={styles.buttonWrapper}>
-        <PrimaryButton label="Next" onPress={() => {}} />
-      </View>
-    </SafeAreaView>
-  </>
+      <Input
+        autoFocus
+        label="Enter correctly spelled word:"
+        onChange={() => {}}
+      />
+    </View>
+    <View style={styles.buttonWrapper}>
+      <PrimaryButton
+        label="Next"
+        onPress={() => {
+          navigation.navigate('Review');
+        }}
+      />
+    </View>
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    height: '100%',
+    justifyContent: 'space-between',
+  },
   container: {
     padding: 20,
   },
@@ -61,7 +69,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   defineText: {
-    marginVertical: 20,
+    marginVertical: 10,
   },
   buttonWrapper: {
     flexDirection: 'row-reverse',
