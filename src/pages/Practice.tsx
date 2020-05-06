@@ -36,6 +36,7 @@ const Practice = ({navigation}: {navigation: StackNavigationProp<any>}) => (
       </View>
       <Input
         autoFocus
+        autoCorrect={false}
         label="Enter correctly spelled word:"
         onChange={() => {}}
       />

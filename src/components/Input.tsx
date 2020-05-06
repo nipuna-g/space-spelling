@@ -5,15 +5,18 @@ const Input = ({
   label,
   onChange,
   autoFocus = false,
+  autoCorrect = true,
 }: {
   label: string;
   onChange: () => void;
   autoFocus?: boolean;
+  autoCorrect?: boolean;
 }) => (
   <>
     <Text style={styles.label}>{label}</Text>
     <View style={styles.inputWrapper}>
       <TextInput
+        autoCorrect={autoCorrect}
         autoFocus={autoFocus}
         style={styles.inputTextInput}
         onChange={onChange}
