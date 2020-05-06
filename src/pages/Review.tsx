@@ -9,7 +9,7 @@ const word = {
 };
 
 const answer = 'defiin';
-const diff = diffChars(word.word, answer);
+const diff = diffChars(answer, word.word);
 
 const Review = () => (
   <SafeAreaView style={styles.mainContainer}>
