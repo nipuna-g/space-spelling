@@ -20,7 +20,7 @@
 		F45289C421A09C9F5BA5713C /* libPods-spacedSpelling-spacedSpellingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1002D7C13AC22A340B0084B9 /* libPods-spacedSpelling-spacedSpellingTests.a */; };
 		FAB2683434E1D0931F11B54B /* libPods-spacedSpelling-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A137B578DE5932FADA0B9 /* libPods-spacedSpelling-tvOSTests.a */; };
 		FFF40F30FB3FC76815577688 /* libPods-spacedSpelling.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B76E0B8B0654266CE9A6AF69 /* libPods-spacedSpelling.a */; };
-		999614F5E4754FA48DEA35BA /* RacingSansOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E821D22D6F54FFF8335FCF1 /* RacingSansOne-Regular.ttf */; };
+		32DB8EC37DC241CCB938054E /* Racing Sans One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41D4B0D15548498EB4BB28E6 /* Racing Sans One.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 		B76E0B8B0654266CE9A6AF69 /* libPods-spacedSpelling.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-spacedSpelling.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		8E821D22D6F54FFF8335FCF1 /* RacingSansOne-Regular.ttf */ = {isa = PBXFileReference; name = "RacingSansOne-Regular.ttf"; path = "../assets/fonts/RacingSansOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41D4B0D15548498EB4BB28E6 /* Racing Sans One.ttf */ = {isa = PBXFileReference; name = "Racing Sans One.ttf"; path = "../assets/fonts/Racing Sans One.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +204,7 @@
 		49866CF8311649F6AED1BF80 /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				8E821D22D6F54FFF8335FCF1 /* RacingSansOne-Regular.ttf */,
+				41D4B0D15548498EB4BB28E6 /* Racing Sans One.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				999614F5E4754FA48DEA35BA /* RacingSansOne-Regular.ttf in Resources */,
+				32DB8EC37DC241CCB938054E /* Racing Sans One.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

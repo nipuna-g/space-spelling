@@ -17,6 +17,7 @@ import BackButton from '@assets/images/back-button.svg';
 import {View, Text, StyleSheet} from 'react-native';
 import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
 import AddWord from '@pages/AddWord';
+import Practice from '@pages/Practice';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -26,7 +27,6 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator
         initialRouteName="Home"
-        hideStatusBar={true}
         drawerContent={(props) => (
           <>
             <DrawerContentScrollView
@@ -65,6 +65,7 @@ const HomeNavigation = ({navigation}: {navigation: any}) => (
   <CommonStackNavigator navigation={navigation}>
     <Stack.Screen name="Spaced Spelling" component={Home} />
     <Stack.Screen name="Add Word" component={AddWord} />
+    <Stack.Screen name="Practice" component={Practice} />
   </CommonStackNavigator>
 );
 
@@ -86,6 +87,7 @@ const CommonStackNavigator = ({
       screenOptions={{
         headerLeft: ({canGoBack}) => (
           <TouchableOpacity
+            style={styles.menu}
             onPress={() => {
               if (canGoBack) {
                 navigation.goBack();
@@ -110,6 +112,9 @@ export default App;
 
 const styles = StyleSheet.create({
   menuHeaderBackground: {backgroundColor: '#232F6B'},
+  menu: {
+    padding: 10,
+  },
   menuHeaderTitle: {
     fontFamily: 'Racing Sans One',
     fontSize: 24,

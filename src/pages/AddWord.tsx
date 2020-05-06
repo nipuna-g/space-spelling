@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, StatusBar, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import Input from '@components/Input';
 import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 import Toast from 'react-native-simple-toast';
@@ -18,8 +18,6 @@ const words = [
 ];
 const AddWord = () => (
   <>
-    <StatusBar barStyle="dark-content" />
-
     <SafeAreaView>
       <View style={styles.container}>
         <Input label="Search for a word:" onChange={() => {}} />

@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
 import SpaceCadet from '@assets/images/space-cadet-bordered.svg';
 import MenuItem from '@components/MenuItem';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 const Home = ({navigation}: {navigation: StackNavigationProp<any>}) => (
   <>
-    <StatusBar barStyle="dark-content" />
-
     <SafeAreaView>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -33,6 +24,9 @@ const Home = ({navigation}: {navigation: StackNavigationProp<any>}) => (
           </View>
         </View>
         <MenuItem
+          onPress={() => {
+            navigation.navigate('Practice');
+          }}
           title="Practice spellings"
           subTitle="6 words to practice for the day"
         />

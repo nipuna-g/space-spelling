@@ -23,7 +23,8 @@
     "react-native-screens": "^2.7.0",
     "react-native-simple-toast": "^1.1.2",
     "react-native-static-safe-area-insets": "^2.1.0",
-    "react-native-svg": "^12.1.0"
+    "react-native-svg": "^12.1.0",
+    "react-native-tts": "^3.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
