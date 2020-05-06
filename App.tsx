@@ -19,6 +19,7 @@ import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
 import AddWord from '@pages/AddWord';
 import Practice from '@pages/Practice';
 import Review from '@pages/Review';
+import Summary from '@pages/Summary';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -68,6 +69,7 @@ const HomeNavigation = ({navigation}: {navigation: any}) => (
     <Stack.Screen name="Add Word" component={AddWord} />
     <Stack.Screen name="Practice" component={Practice} />
     <Stack.Screen name="Review" component={Review} />
+    <Stack.Screen name="Summary" component={Summary} />
   </CommonStackNavigator>
 );
 

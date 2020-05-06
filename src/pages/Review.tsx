@@ -2,6 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import PrimaryButton from '@components/PrimaryButton';
 import {diffChars} from 'diff';
+import {StackNavigationProp} from '@react-navigation/stack';
 const word = {
   word: 'define',
   pronunciation: '/dɪˈfʌɪn/',
@@ -11,7 +12,7 @@ const word = {
 const answer = 'defiin';
 const diff = diffChars(answer, word.word);
 
-const Review = () => (
+const Review = ({navigation}: {navigation: StackNavigationProp<any>}) => (
   <SafeAreaView style={styles.mainContainer}>
     <View style={styles.container}>
       <View style={styles.wordContainer}>
@@ -33,7 +34,12 @@ const Review = () => (
       </View>
     </View>
     <View style={styles.buttonWrapper}>
-      <PrimaryButton label="Next" onPress={() => {}} />
+      <PrimaryButton
+        label="Next"
+        onPress={() => {
+          navigation.navigate('Summary');
+        }}
+      />
     </View>
   </SafeAreaView>
 );
