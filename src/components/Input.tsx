@@ -1,11 +1,23 @@
 import React from 'react';
 import {Text, TextInput, StyleSheet, View} from 'react-native';
 
-const Input = ({label, onChange}: {label: string; onChange: () => void}) => (
+const Input = ({
+  label,
+  onChange,
+  autoFocus = false,
+}: {
+  label: string;
+  onChange: () => void;
+  autoFocus?: boolean;
+}) => (
   <>
     <Text style={styles.label}>{label}</Text>
     <View style={styles.inputWrapper}>
-      <TextInput style={styles.inputTextInput} onChange={onChange} />
+      <TextInput
+        autoFocus={autoFocus}
+        style={styles.inputTextInput}
+        onChange={onChange}
+      />
     </View>
   </>
 );

@@ -34,7 +34,11 @@ const Practice = () => (
           </TouchableOpacity>
           <Text style={styles.defineText}>{words[0].description}</Text>
         </View>
-        <Input label="Enter correctly spelled word:" onChange={() => {}} />
+        <Input
+          autoFocus
+          label="Enter correctly spelled word:"
+          onChange={() => {}}
+        />
       </View>
       <View style={styles.buttonWrapper}>
         <PrimaryButton label="Next" onPress={() => {}} />

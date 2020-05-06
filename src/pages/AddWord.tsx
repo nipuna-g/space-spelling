@@ -20,7 +20,7 @@ const AddWord = () => (
   <>
     <SafeAreaView>
       <View style={styles.container}>
-        <Input label="Search for a word:" onChange={() => {}} />
+        <Input autoFocus label="Search for a word:" onChange={() => {}} />
         <ScrollView>
           {words.map(({word, pronunciation, description}) => (
             <TouchableOpacity
