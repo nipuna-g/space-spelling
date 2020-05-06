@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
   inputTextInput: {
     margin: 10,
+    padding: 0,
   },
 });
 
