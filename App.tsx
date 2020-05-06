@@ -103,7 +103,11 @@ const CommonStackNavigator = ({
         headerLeftContainerStyle: {
           paddingLeft: 10,
         },
-        headerTitleStyle: {fontFamily: 'Racing Sans One', fontSize: 24},
+        headerTitleStyle: {
+          fontFamily: 'Racing Sans One',
+          fontSize: 24,
+          color: '#232F6B',
+        },
       }}>
       {children}
     </Stack.Navigator>
