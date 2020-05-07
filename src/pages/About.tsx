@@ -1,7 +1,15 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  Linking,
+} from 'react-native';
 import SpaceCadet from '@assets/images/space-cadet-bordered.svg';
 import {getReadableVersion} from 'react-native-device-info';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 let readableVersion = getReadableVersion();
 
@@ -27,9 +35,14 @@ const About = () => (
         </Text>
 
         <Text style={styles.itemTitle}>Source Code</Text>
-        <Text style={styles.itemContent}>
-          https://github.com/nipuna777/spaced-spelling
-        </Text>
+        <TouchableOpacity
+          onPress={() =>
+            Linking.openURL('https://github.com/nipuna777/space-spelling')
+          }>
+          <Text style={styles.itemContent}>
+            https://github.com/nipuna777/space-spelling
+          </Text>
+        </TouchableOpacity>
 
         <Text style={styles.itemTitle}>Developed and Maintained by</Text>
         <Text style={styles.itemContent}>Nipuna Gunathilake</Text>
