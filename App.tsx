@@ -29,6 +29,7 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator
         initialRouteName="Home"
+        backBehavior="initialRoute"
         drawerContent={(props) => (
           <>
             <DrawerContentScrollView
