@@ -16,7 +16,7 @@ const Review = ({navigation}: {navigation: StackNavigationProp<any>}) => (
   <SafeAreaView style={styles.mainContainer}>
     <View style={styles.container}>
       <View style={styles.wordContainer}>
-        {diff.map((section) => {
+        {diff.map((section, index) => {
           let color = '#000';
           if (section.added) {
             color = '#f00';
@@ -24,7 +24,9 @@ const Review = ({navigation}: {navigation: StackNavigationProp<any>}) => (
             color = '#0f0';
           }
           return (
-            <Text style={{...styles.wordText, color}}>{section.value}</Text>
+            <Text key={index} style={{...styles.wordText, color}}>
+              {section.value}
+            </Text>
           );
         })}
       </View>

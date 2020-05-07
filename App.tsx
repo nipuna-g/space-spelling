@@ -20,6 +20,7 @@ import AddWord from '@pages/AddWord';
 import Practice from '@pages/Practice';
 import Review from '@pages/Review';
 import Summary from '@pages/Summary';
+import Setting from '@pages/Setting';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -59,6 +60,7 @@ const App = () => {
         )}>
         <Drawer.Screen name="Home" component={HomeNavigation} />
         <Drawer.Screen name="About" component={AboutNavigator} />
+        <Drawer.Screen name="Setting" component={SettingNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -77,6 +79,12 @@ const HomeNavigation = ({navigation}: {navigation: any}) => (
 const AboutNavigator = ({navigation}: {navigation: any}) => (
   <CommonStackNavigator navigation={navigation}>
     <Stack.Screen name="About" component={About} />
+  </CommonStackNavigator>
+);
+
+const SettingNavigator = ({navigation}: {navigation: any}) => (
+  <CommonStackNavigator navigation={navigation}>
+    <Stack.Screen name="Setting" component={Setting} />
   </CommonStackNavigator>
 );
 
