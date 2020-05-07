@@ -15,8 +15,8 @@ const PrimaryButton = ({
 }: {
   label: string;
   onPress: () => void;
-  style: StyleProp<ViewStyle>;
-  inverse: boolean;
+  style?: StyleProp<ViewStyle>;
+  inverse?: boolean;
 }) => (
   <TouchableOpacity
     style={[
