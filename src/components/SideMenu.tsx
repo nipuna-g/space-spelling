@@ -47,14 +47,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 30,
   },
-  drawerContainer: {backgroundColor: '#fff', minHeight: 300},
-  drawerItem: {
+  drawerContainer: {
     backgroundColor: '#fff',
-    alignSelf: 'center',
-    marginLeft: 40,
+    minHeight: 300,
   },
-  drawerLabel: {fontSize: 18, textAlign: 'center'},
-  drawerBottom: {flex: 1, justifyContent: 'flex-end', backgroundColor: '#fff'},
+  drawerItem: {
+    alignItems: 'center',
+  },
+  drawerLabel: {
+    fontSize: 18,
+  },
+  drawerBottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: '#fff',
+  },
   drawerLoginSection: {
     alignItems: 'center',
     padding: 5,
