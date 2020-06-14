@@ -1,4 +1,4 @@
-GOOGLE_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/android/google-services.json
+GOOGLE_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/android/app/google-services.json
 
 if [ -e "$GOOGLE_JSON_FILE" ]
 then
